@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+ /* Reset de márgenes y rellenos */
+ body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Quicksand", sans-serif;
+}
+.navbar{
+    background-color: #171743ff !important;
+    box-shadow: none;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+/* Estilos para los enlaces de la barra de navegación */
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff; /* Cambia a blanco para resaltar sobre fondo oscuro */
+    font-weight: 600;
+}
+
+/* Cambio de color de los enlaces al pasar el ratón */
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #6c5ae6ff;
+}
+.navbar-brand, .nav-link {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+/* Ajuste para que cada sección ocupe toda la pantalla sin líneas entre ellas */
+section {
+    height: 100vh;
+    background-size: cover;
+    background-color: #171743ff;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+/* Ajustes en texto y contenedores de cursos */
+.section-3 h1, .section-3 h4, .section-3 p {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+/* Secciones con imágenes de fondo */
+.section-1 { background-image: url('img/img1.png'); }
+.section-2 { background-image: url('img/img2.png'); }
+.section-3 { background-image: url('img/img3.png'); }
+.section-4 { background-image: url('img/img4.png'); }
+.section-5 { background-image: url('img/img5.png'); }
+.section-1, .section-2, .section-3, .section-4, .section-5 {
+    background-attachment: scroll;
+}
+
+/* Media Queries para ajustar la posición de la imagen en pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px; /* Añadir espacio interno para pantallas pequeñas */
+    }
+    .navbar {
+        padding: 0.5rem;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .section-2 .carousel-content,
+    .section-3 .courses .course {
+        width: 100%; /* Para que cada curso ocupe toda la pantalla */
+    }
+    section {
+        background-size: cover; /* Permite que la imagen cubra el área completa */
+        background-attachment: scroll; /* Evita el efecto fijo en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 576px) {
+    section {
+        font-size: 1.5rem; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+    .promo-title {
+        font-size: 1.5rem;
+        margin-top: 50px;
+    }
+
+    .section-3 .courses {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%; /* Hace los controles más accesibles en móviles */
+    }
+}
+@media (min-width: 1200px) {
+    section {
+        background-attachment: fixed; /* Hace que el fondo se fije al hacer scroll en pantallas grandes */
+    }
+}
+
+#banner{
+    color: #fff;
+    padding-top: 5%;
+}
+.promo-title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+.bottom-img{
+    width: 100%;
+}
+
+#banner .btn-primary{
+    font-weight: 600;
+    color: #092d47;
+    box-shadow: none;
+    padding: 8px 25px;
+    border: none;
+    border-radius: 20px;
+    background-color:#6c5ae6ff ;
+}
+#banner .btn-primary:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 10px #6c5ae6ff;
+}
+
+.carousel-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Espaciado entre los contenedores */
+    min-height: 350px; /* Ajusta el valor según el tamaño deseado */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Establece una altura fija para los contenedores */
+    max-height: 350px; /* Altura máxima para evitar que se estiren */
+    overflow: hidden; /* Oculta el contenido desbordado */
+    align-items: center;
+    text-align: center;
+}
+
+.carousel-content img {
+    width: 80px; /* Ajusta este valor al tamaño deseado para el ícono */
+    height: 80px; /* Para que sea un cuadrado de tamaño uniforme */
+    object-fit: contain; /* Mantiene las proporciones de la imagen sin recortes */
+    border-radius: 50%; /* Opcional: convierte la imagen en un círculo si deseas un estilo de ícono redondo */
+    margin-bottom: 10px;
+}
+
+
+.carousel-content p {
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.carousel-content h4 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+/* Coloca los controles en los extremos del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ajusta el ancho del área clicable de los botones */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+    left: -3%; /* Desplaza el botón a la izquierda, fuera del área de los contenedores */
+}
+
+.carousel-control-next {
+    right: -3%; /* Desplaza el botón a la derecha, fuera del área de los contenedores */
+}
+
+/* Ajusta el tamaño de los íconos de los botones si es necesario */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100%, 100%;
+}
+
+.section-3{
+    padding: 20px;
+}
+/* Estilos para centrar los contenedores y textos */
+.section-3 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-3 .courses {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los cursos se envuelvan en pantallas más pequeñas */
+    justify-content: center; /* Centra los cursos en la fila */
+    gap: 20px; /* Espacio entre los cursos */
+}
+
+.section-3 .course {
+    text-align: center; /* Centra el texto dentro de cada curso */
+    width: calc(50% - 10px); /* Ajusta el ancho para pantallas grandes, restando espacio por gap */
+    max-width: 400px; /* Limita el ancho máximo del curso */
+    box-sizing: border-box;
+}
+
+
+article {
+    position: relative;
+    width: 350px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente las imágenes */
+    align-items: center; /* Alinea verticalmente si es necesario */
+    gap: 10px; /* Espacio entre las imágenes */
+  }
+  
+  article img:first-child {
+    box-shadow: 0 60px 60px -60x rgba(0, 30, 255, 0.5);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  article img:last-child {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: 0.3s ease;
+    opacity: 0;
+  }
+  
+  article:hover {
+    transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+  }
+  
+  article::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 10%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0) 95%
+    );
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  article:hover::before {
+    opacity: 1;
+  }
+  
+  article:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
+  }
+
+  .section-3 h1 {
+    font-size: clamp(1.5rem, 2.5vw, 3rem); /* Ajusta el título principal */
+    margin-bottom: 20px;
+}
+
+.section-3 h4 {
+    font-size: clamp(1.2rem, 2vw, 2rem); /* Ajusta el tamaño del subtítulo */
+    margin-top: 10px;
+}
+
+.section-3 p {
+    font-size: clamp(1rem, 1.5vw, 1.5rem); /* Ajusta el tamaño del párrafo */
+    margin-top: 5px;
+}
+
+.section-3 .course article {
+    margin: 0 auto; /* Centra el contenedor de imágenes */
+    display: flex;
+    justify-content: center; /* Centra las imágenes dentro de article */
+    align-items: center;
+}
+
+.section-3 .course article img {
+    max-width: 100%; /* Asegura que las imágenes no excedan el tamaño del contenedor */
+    object-fit: cover; /* Mantiene las proporciones de la imagen */
+}
+
+.section-3 .courses {
+    justify-content: center; /* Centra los cursos en la fila */
+    gap: 20px;
+}
+

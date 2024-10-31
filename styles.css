@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Quicksand", sans-serif;
+}
+body {
+    overflow-y: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: block; /* Cambiamos de flex a block para que las secciones se apilen */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #171743ff;
+    color: #fdfcdd;
+    font-family: 'Quicksand', sans-serif; 
+    background-image: url('img/img1.png'); /* Reemplaza 'tu_imagen.jpg' con el nombre de tu imagen */
+    background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+}
+
+
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* En pantallas pequeñas, la imagen se ajustará sin cortar */
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: cover; /* Asegura que la imagen ocupe todo el fondo en móviles */
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 0; /* Reducimos padding para evitar que se superpongan entre sí */
+    display: block; /* Aseguramos que las secciones sean bloques */
+}
+
+.home {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Centramos el contenido */
+}
+
+:root{
+    --bg-color: #081b28eb;
+    --second-bg-color: #022333e7;
+    --text-color: white;
+    --main-color: cyan;
+}
+html{
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 60%;
+    overflow-x: hidden;
+}
+section{
+    min-height: 100vh;
+    padding: 30rem 15% 30rem;
+}
+#particles-js{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -100;
+}
+.banner {
+    font-size: 5rem; /* Incrementamos el tamaño de la letra */
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#banner-text {
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+}
+
+.underscore {
+    animation: blink 1s steps(3, start) infinite;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Estilos para los símbolos "<" y "/>" */
+.symbols {
+    color: #6c5ae6ff; /* Color diferente para los símbolos */
+}
+
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        font-size: 2rem; /* Ajustamos el tamaño en pantallas más pequeñas */
+    }
+}
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+    position: relative;
+}
+#start-button {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: #6c5ae6ff;
+    box-shadow: 0 0 25px #6c5ae6ff;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #ffff;
+    border: 2px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#start-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px #6c5ae6ff;
+}
+
+.home-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 3rem;
+    min-height: 20rem;
+    align-items: center; /* Centra el contenido incluyendo el botón */
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+@media (max-width: 1167px) {
+    /* Ajusta el tamaño del texto dinámico */
+    .banner {
+        font-size: 3rem; /* Cambia el tamaño del texto a un valor más pequeño */
+    }
+
+    /* Ajusta el tamaño del botón */
+    #start-button {
+        padding: 0.8rem 1.5rem; /* Reduce el tamaño del botón */
+        font-size: 1.4rem; /* Cambia el tamaño de la fuente dentro del botón */
+    }
+}
+
+@media (max-width: 900px) {
+    .banner {
+        font-size: 2.5rem; /* Reduce aún más el tamaño del texto */
+    }
+
+    #start-button {
+        padding: 0.6rem 1rem; /* Ajusta el tamaño del botón */
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .banner {
+        font-size: 2rem; /* Para pantallas muy pequeñas como móviles */
+    }
+
+    #start-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 1rem;
+    }
+}
+
+.logo {
+    margin-bottom: 2rem; /* Espacio entre el logo y el texto dinámico */
+}
+
+.logo img {
+    width: 150px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantén la proporción del logo */
+    transition: transform 0.3s ease, content 0.3s ease;
+}
+.logo:hover img {
+    transform: scale(1.2); /* Aumenta el tamaño del logo al hacer hover */
+}
+
+/* Ajustes responsivos para el logo */
+@media (max-width: 1167px) {
+    .logo img {
+        width: 120px; /* Reduce el tamaño del logo en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 900px) {
+    .logo img {
+        width: 100px; /* Ajuste adicional para pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 600px) {
+    .logo img {
+        width: 80px; /* Para dispositivos móviles */
+    }
+}
+
+.comet {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+    background: url('cometa.svg') no-repeat center;
+    background-size: contain;
+    animation: comet-animation 5s ease-in-out infinite;
+    animation-delay: 3s; /* Retraso antes de que vuelva a aparecer */
+}
+
+/* Animación del cometa */
+@keyframes comet-animation {
+    0% {
+        transform: translate(0, 0);
+    }
+    60% {
+        transform: translate(100vw, -100vh); /* Fin del trayecto */
+    }
+    100% {
+        transform: translate(100vw, -100vh); /* Mantiene la posición hasta que se repita */
+    }
+}
